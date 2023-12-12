@@ -29,7 +29,7 @@ php bin/magento setup:static-content:deploy -f
 php bin/magento c:c
 ```
 
-With these steps completed, you'll be ready to utilize the Yudiz OrderNotification Extension.
+With these steps completed, you'll be ready to utilize the Yudiz Yudiz Coupon Usage Report Extension.
 
 ### 2. Download Directly
 
