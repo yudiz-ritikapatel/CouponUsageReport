@@ -108,11 +108,10 @@ class CouponUsageReport extends \Magento\Sales\Model\ResourceModel\Report\Abstra
      */
     public function aggregate($from = null, $to = null)
     {
-        $mainTable = $this->getMainTable();
         $connection = $this->getConnection();
+
         try {
             $insertBatches = [];
-
             $collection = $this->reportCollectionFactory->create();
             $data = $collection->getData();
             $orderCollection = $this->orderCollectionFactory->create();
@@ -133,18 +132,22 @@ class CouponUsageReport extends \Magento\Sales\Model\ResourceModel\Report\Abstra
              *
              * You have to insert data to your aggregate report table
              */
+            $LastOrderId = empty($data) ? 0 : $data[$arraySize - 1]['order_id'];
+
             if ($orderCollection) {
                 foreach ($orderCollection as $order) {
-                    $name = $order['customer_firstname'] . ' ' . $order['customer_lastname'];
-                    $insertBatches[] = [
-                        'rule_name'   => $order['coupon_rule_name'],
-                        'coupon_code'   => $order['coupon_code'],
-                        'order_id'      => $order['entity_id'],
-                        'user_id'       => $order['customer_id'],
-                        'user_name'     => $name,
-                        'user_email'    => $order['customer_email'],
-                        'created_at'    => $order['created_at']
-                    ];
+                    if ($order['entity_id'] > $LastOrderId) {
+                        $name = $order['customer_firstname'] . ' ' . $order['customer_lastname'];
+                        $insertBatches[] = [
+                            'rule_name'   => $order['coupon_rule_name'],
+                            'coupon_code'   => $order['coupon_code'],
+                            'order_id'      => $order['entity_id'],
+                            'user_id'       => $order['customer_id'],
+                            'user_name'     => $name,
+                            'user_email'    => $order['customer_email'],
+                            'created_at'    => $order['created_at']
+                        ];
+                    }
                 }
             }
             $tableName = $this->resource->getTableName(self::REPORT_COUPONCODE);
@@ -156,17 +159,5 @@ class CouponUsageReport extends \Magento\Sales\Model\ResourceModel\Report\Abstra
             throw $e;
         }
         return $this;
-    }
-
-    /**
-     * Truncate the report table
-     *
-     * @return void
-     */
-    public function truncateTable()
-    {
-        $table = $this->resource->getTableName(self::REPORT_COUPONCODE);
-        $connection = $this->resource->getConnection();
-        $connection->truncateTable($table);
     }
 }
