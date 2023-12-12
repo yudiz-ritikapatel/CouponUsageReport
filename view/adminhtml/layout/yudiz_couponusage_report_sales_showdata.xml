@@ -1,0 +1,27 @@
+<!--
+/**
+ * Yudiz
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Yudiz
+ * @package     Yudiz_CouponUsageReport
+ * @copyright   Copyright (c) 2023 Yudiz (https://www.Yudiz.com/)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceContainer name="content">
+        <block class="Yudiz\CouponUsageReport\Block\Adminhtml\Button\Back" name="grid_grid_btn"/>
+        <block class="Yudiz\CouponUsageReport\Block\Adminhtml\Grid\Grid" name="grid_grid_listing"/>
+    </referenceContainer>
+    <referenceBlock name="adminhtml.block.grid.massactions">
+        <arguments>
+            <argument name="class" xsi:type="string">Yudiz\CouponUsageReport\Block\Adminhtml\MyFilterActions</argument>
+        </arguments>
+    </referenceBlock>
+</body>
+</page>
