@@ -70,7 +70,7 @@ By following these 2 Ways you can easily obtain and install the module.  For det
 
 ## Magento 2 Coupon Usage Report User Guide
 
-Login to the **Magento Admin**, navigate to `Yudiz -> Configure CouponUsageReport `.
+Login to the **Magento Admin**, navigate to `Yudiz -> Couponcode Usage Report `.
 
 <div>
     <img src="./ReadmeImages/CouponCodeUsage.png" alt="CouponCodeUsage Image">
