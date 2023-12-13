@@ -102,6 +102,4 @@ And You'll see the coupon usage data in the following manner:
 You can easily view which users used which coupon codes here, and by using the Export button, you can download or export this data into an Excel file.
 
 
-
-
-
+**Note: Please remember to refresh statistics each time to ensure you have the most up-to-date data.**
