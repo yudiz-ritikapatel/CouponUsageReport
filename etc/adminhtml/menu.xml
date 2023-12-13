@@ -16,6 +16,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Yudiz_CouponUsageReport::Report_CouponUsageReport" title="Yudiz CouponUsageReport" module="Yudiz_CouponUsageReport" sortOrder="100" parent="Yudiz_Core::manager" resource="Yudiz_CouponUsageReport::Report_CouponUsageReport"/>
-        <add id="Yudiz_CouponUsageReport::configuration" title="Configure CouponUsageReport" module="Yudiz_CouponUsageReport" sortOrder="1000" resource="Yudiz_CouponUsageReport::configuration" action="yudiz_couponusage/report_sales/couponusagereport" parent="Yudiz_CouponUsageReport::Report_CouponUsageReport"/>
+        <add id="Yudiz_CouponUsageReport::configuration" title="Couponcode Usage Report" module="Yudiz_CouponUsageReport" sortOrder="1000" resource="Yudiz_CouponUsageReport::configuration" action="yudiz_couponusage/report_sales/couponusagereport" parent="Yudiz_CouponUsageReport::Report_CouponUsageReport"/>
     </menu>
 </config>
