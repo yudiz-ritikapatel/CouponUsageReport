@@ -81,6 +81,8 @@ Login to the **Magento Admin**, navigate to `Yudiz -> Couponcode Usage Report `.
 - To Date: Select the date until which you want the data
 - Rule Applied: Choose the specific rule to indicate which data you need
 
+**Note: Please remember to refresh statistics each time to ensure you have the most up-to-date data.**
+
 After click on Click on Statistics you will see the following format:
 
 <div>
@@ -100,6 +102,3 @@ And You'll see the coupon usage data in the following manner:
 </div><br/>
 
 You can easily view which users used which coupon codes here, and by using the Export button, you can download or export this data into an Excel file.
-
-
-**Note: Please remember to refresh statistics each time to ensure you have the most up-to-date data.**
