@@ -19,7 +19,7 @@ Now, To install the Yudiz Coupon Usage Report Extension via Composer, follow the
 
 Run the following command:
 ```shell
-composer require yudiz/couponusagereport
+composer require yudiz/coupon-usage-report
 ```
 After a successful installation, execute the following commands:
 
